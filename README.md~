@@ -8,8 +8,7 @@
 8.  git commit -m "2nd change"
 9. git remote add origin https://github.com/meraj09034/Ruby-on-Rails-in-prectic.git
 10.  git push -u origin master
-11. git status
-12. 
+11. 
 
 
 

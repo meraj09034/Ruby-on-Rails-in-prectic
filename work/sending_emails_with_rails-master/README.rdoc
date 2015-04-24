@@ -1,0 +1,11 @@
+== README
+
+Simple application for sending mails from rails application. App uses following: 
+
+* Action Mailer 
+
+* SMTP with Gmail and Mailgun
+
+* Mailgun API via mailgun-ruby
+
+* Action Mailer Preview for previewing emails.

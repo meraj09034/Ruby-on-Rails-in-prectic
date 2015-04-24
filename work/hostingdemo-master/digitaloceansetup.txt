@@ -1,0 +1,28 @@
+IP Address: 107.170.250.109
+Username: root
+Password: kodzosswlxun
+
+INSTRUCTIONS
+
+To login to your droplet, you will need to open a terminal window and copy and paste the following string:
+
+ssh root@107.170.250.109
+
+Once you've entered the string, copy and paste your password:
+
+kodzosswlxun
+
+# Bundle install
+bundle install --deployment
+
+#Compile the assets
+RAILS_ENV=production rake assets:precompile
+
+# Run the seeds file
+RAILS_ENV=production rake db:seeds
+
+#Migrate the Database
+ RAILS_ENV=production rake db:migrate
+
+#Restart the Unicorn server
+service unicorn restart

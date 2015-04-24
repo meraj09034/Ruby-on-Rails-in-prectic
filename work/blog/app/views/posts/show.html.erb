@@ -1,0 +1,13 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @posts.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @posts.content %>
+</p>
+
+<small><%= @posts.created_at %> </small>
+<p>  <%= link_to 'Back', posts_path %></p>

@@ -1,0 +1,77 @@
+<h1>Listing foods</h1>
+<%= paginate @foods %>
+<table>
+  <thead>
+    <tr>
+      <th>Food code</th>
+      <th>Display name</th>
+      <th>Portion default</th>
+      <th>Portion amount</th>
+      <th>Portion display name</th>
+      <th>Factor</th>
+      <th>Portion Increment</th>
+      <th>Multiplier</th>
+      <th>Grains</th>
+      <th>Whole grains</th>
+      <th>Vegetables</th>
+      <th>Orange vegetables</th>
+      <th>Drkgreen vegetables</th>
+      <th>Starchy vegetables</th>
+      <th>Other vegetables</th>
+      <th>Fruits</th>
+      <th>Milk</th>
+      <th>Meats</th>
+      <th>Soy</th>
+      <th>Drybeans peas</th>
+      <th>Oils</th>
+      <th>Solid fats</th>
+      <th>Added sugars</th>
+      <th>Alcohol</th>
+      <th>Calories</th>
+      <th>Saturated fats</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.food_code %></td>
+        <td><%= food.display_name %></td>
+        <td><%= food.portion_default %></td>
+        <td><%= food.portion_amount %></td>
+        <td><%= food.portion_display_name %></td>
+        <td><%= food.factor %></td>
+        <td><%= food.portion_increment %></td>
+        <td><%= food.multiplier %></td>
+        <td><%= food.grains %></td>
+        <td><%= food.whole_grains %></td>
+        <td><%= food.vegetables %></td>
+        <td><%= food.orange_vegetables %></td>
+        <td><%= food.drkgreen_vegetables %></td>
+        <td><%= food.starchy_vegetables %></td>
+        <td><%= food.other_vegetables %></td>
+        <td><%= food.fruits %></td>
+        <td><%= food.milk %></td>
+        <td><%= food.meats %></td>
+        <td><%= food.soy %></td>
+        <td><%= food.drybeans_peas %></td>
+        <td><%= food.oils %></td>
+        <td><%= food.solid_fats %></td>
+        <td><%= food.added_sugars %></td>
+        <td><%= food.alcohol %></td>
+        <td><%= food.calories %></td>
+        <td><%= food.saturated_fats %></td>
+        <td><%= link_to 'Show', food %></td>
+        <td><%= link_to 'Edit', edit_food_path(food) %></td>
+        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @foods %>
+<br>
+
+<%= link_to 'New Food', new_food_path %>

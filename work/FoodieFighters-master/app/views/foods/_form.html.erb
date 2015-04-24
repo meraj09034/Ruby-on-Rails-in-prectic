@@ -1,0 +1,121 @@
+<%= form_for(@food) do |f| %>
+  <% if @food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+      <% @food.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :food_code %><br>
+    <%= f.text_field :food_code %>
+  </div>
+  <div class="field">
+    <%= f.label :display_name %><br>
+    <%= f.text_field :display_name %>
+  </div>
+  <div class="field">
+    <%= f.label :portion_default %><br>
+    <%= f.text_field :portion_default %>
+  </div>
+  <div class="field">
+    <%= f.label :portion_amount %><br>
+    <%= f.text_field :portion_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :portion_display_name %><br>
+    <%= f.text_field :portion_display_name %>
+  </div>
+  <div class="field">
+    <%= f.label :factor %><br>
+    <%= f.text_field :factor %>
+  </div>
+  <div class="field">
+    <%= f.label :portion_increment %><br>
+    <%= f.text_field :portion_increment %>
+  </div>
+  <div class="field">
+    <%= f.label :multiplier %><br>
+    <%= f.text_field :multiplier %>
+  </div>
+  <div class="field">
+    <%= f.label :grains %><br>
+    <%= f.text_field :grains %>
+  </div>
+  <div class="field">
+    <%= f.label :whole_grains %><br>
+    <%= f.text_field :whole_grains %>
+  </div>
+  <div class="field">
+    <%= f.label :vegetables %><br>
+    <%= f.text_field :vegetables %>
+  </div>
+  <div class="field">
+    <%= f.label :orange_vegetables %><br>
+    <%= f.text_field :orange_vegetables %>
+  </div>
+  <div class="field">
+    <%= f.label :drkgreen_vegetables %><br>
+    <%= f.text_field :drkgreen_vegetables %>
+  </div>
+  <div class="field">
+    <%= f.label :starchy_vegetables %><br>
+    <%= f.text_field :starchy_vegetables %>
+  </div>
+  <div class="field">
+    <%= f.label :other_vegetables %><br>
+    <%= f.text_field :other_vegetables %>
+  </div>
+  <div class="field">
+    <%= f.label :fruits %><br>
+    <%= f.text_field :fruits %>
+  </div>
+  <div class="field">
+    <%= f.label :milk %><br>
+    <%= f.text_field :milk %>
+  </div>
+  <div class="field">
+    <%= f.label :meats %><br>
+    <%= f.text_field :meats %>
+  </div>
+  <div class="field">
+    <%= f.label :soy %><br>
+    <%= f.text_field :soy %>
+  </div>
+  <div class="field">
+    <%= f.label :drybeans_peas %><br>
+    <%= f.text_field :drybeans_peas %>
+  </div>
+  <div class="field">
+    <%= f.label :oils %><br>
+    <%= f.text_field :oils %>
+  </div>
+  <div class="field">
+    <%= f.label :solid_fats %><br>
+    <%= f.text_field :solid_fats %>
+  </div>
+  <div class="field">
+    <%= f.label :added_sugars %><br>
+    <%= f.text_field :added_sugars %>
+  </div>
+  <div class="field">
+    <%= f.label :alcohol %><br>
+    <%= f.text_field :alcohol %>
+  </div>
+  <div class="field">
+    <%= f.label :calories %><br>
+    <%= f.text_field :calories %>
+  </div>
+  <div class="field">
+    <%= f.label :saturated_fats %><br>
+    <%= f.text_field :saturated_fats %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

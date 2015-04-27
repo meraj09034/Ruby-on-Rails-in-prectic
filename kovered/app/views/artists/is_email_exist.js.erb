@@ -1,0 +1,11 @@
+<% if @user.present? %>
+if($("#artist_user_attributes_email").siblings('p').length != 1) {
+    $("<p />", {
+        text: "Someone already has that Email. Try another?",
+        class: 'is_email_exist'
+    }).insertAfter("#artist_user_attributes_email").parents('.form-group').addClass('field_with_errors');
+}
+<% else %>
+    $("#artist_user_attributes_email").next('p.is_email_exist').remove();
+    $("#artist_user_attributes_email").parents('.form-group').removeClass('field_with_errors')
+<% end %>

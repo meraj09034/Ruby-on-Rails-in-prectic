@@ -1,0 +1,320 @@
+<% content_for :title, "Artist Registration" %>
+<%= render 'form' %>
+<%= form_for(@artist, :html => {:class => "form-horizontal margin-none", :autocomplete => "off"}) do |f| %>
+    <%= error_messages! @artist %>
+    <%#= render 'layouts/error_messages', :object => @fan %>
+
+    <!-- Widget -->
+    <div class="widget">
+
+    <!-- Widget heading -->
+    <div class="widget-head">
+      <h4 class="heading">Artist Registration</h4>
+    </div>
+    <!-- // Widget heading END -->
+
+    <!-- Tabs -->
+    <div class="relativeWrap">
+    <div class="box-generic">
+
+    <!-- Tabs Heading -->
+    <div class="tabsbar tabsbar-2">
+      <ul class="row row-merge">
+        <li class="col-md-4 glyphicons star active">
+          <%= link_to new_artist_path do %>
+              <i></i> <span>Artist</span>
+          <% end %>
+
+          <!--<a href="" data-toggle="tab"><i></i> <span>Music Lover</span></a>-->
+        </li>
+        <li class="col-md-4 glyphicons heart">
+          <%= link_to new_fan_path do %>
+              <i></i> <span>Music Lover</span>
+          <% end %>
+
+          <!--<a href="" data-toggle="tab"><i></i> <span>Music Lover</span></a>-->
+        </li>
+        <li class="col-md-4 glyphicons group">
+          <%= link_to new_executive_path do %>
+              <i></i> <span>Industry Executive</span>
+          <% end %>
+      </ul>
+    </div>
+    <!-- // Tabs Heading END -->
+
+    <div class="tab-content">
+
+    <!-- Tab content -->
+    <div class="tab-pane active" id="tab1-4">
+    <div class="widget-body innerAll inner-2x">
+
+    <!-- Row -->
+    <div class="row innerLR">
+
+      <!-- Column -->
+      <div class="col-md-5">
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :first_name, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :first_name, autofocus: true, :class => "form-control" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :last_name, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :last_name, :class => "form-control" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :band_name,'Artist/Band Name', :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :band_name, :class => "form-control" %>
+            <%#= f.grouped_collection_select(:fav_genre, MusicGenre.all, :genres, :name, :id, :name, {:prompt=>"Select Favorite Genre"}, {:class=> "dropdown-toggle form-control span8"}) %>
+            <%#= f.select :band_name, grouped_options_for_select(music_genre), {:prompt=>"Select Band Name"}, {:class=> "dropdown-toggle form-control span8 chosen-select"} %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :genre_id,'Genre', :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%#= f.grouped_collection_select(:fav_genre, MusicGenre.all, :genres, :name, :id, :name, {:prompt=>"Select Favorite Genre"}, {:class=> "dropdown-toggle form-control span8"}) %>
+            <%= f.select :genre_id, grouped_options_for_select(music_genre), {:prompt=>"Select Genre"}, {:class=> "dropdown-toggle form-control span8 chosen-select"} %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <!--<div class="form-group">
+          <%#= f.label :genre_ids,'Others', :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%#= f.select :genre_ids, grouped_options_for_select(music_genre), {:prompt=>"Select Other Genres"}, { :data => {:placeholder=>"Select Genres..."}, :class=> "dropdown-toggle form-control span8 chosen-select", :multiple => true} %>
+          </div>
+        </div>-->
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :city, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :city, :class => "form-control span8" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :country_id, :class => "col-md-4 control-label " %>
+
+
+          <div class="col-md-8">
+            <%= f.select :country_id, country,  {:prompt => t('select_nationality')}, {:class => "dropdown-toggle form-control span8 chosen-select"} %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :date_of_birth, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :date_of_birth, :class=>'datetime form-control span8' %>
+            <%#= f.date_select :date_of_birth, :class => "form-control", :id=>"inputmask-date-2", :placeholder=>"dd/mm/yyyy" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+      </div>
+      <!-- // Column END -->
+      <!-- Column -->
+      <div class="col-md-7">
+
+        <%= f.fields_for :user do |v| %>
+
+            <!-- Group -->
+            <div class="form-group">
+              <%= v.label :username, :class => "col-md-4 control-label" %>
+              <div class="col-md-8">
+                <%= v.text_field :username, :class => "form-control span8" %>
+              </div>
+            </div>
+            <!-- // Group END -->
+
+            <!-- Group -->
+            <div class="form-group">
+              <%= v.label :email, :class => "col-md-4 control-label" %>
+              <div class="col-md-8">
+                <%= v.email_field :email, autocomplete: "on", :class => "form-control span8" %>
+                <p class="has-error help-block"></p>
+              </div>
+            </div>
+            <!-- // Group END -->
+
+            <!-- Group -->
+            <div class="form-group">
+              <%= v.label :password, :class => "col-md-4 control-label" %>
+              <div class="col-md-8">
+                <%= v.password_field :password, autocomplete: "off", :class => "form-control span8" %>
+              </div>
+              <% if @validatable %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+            </div>
+            <!-- // Group END -->
+
+            <!-- Group -->
+            <div class="form-group">
+              <%= v.label :password_confirmation,'Confirm password', :class => "col-md-4 control-label" %>
+              <div class="col-md-8">
+                <%= v.password_field :password_confirmation, autocomplete: "off", :class => "form-control span8" %>
+              </div>
+            </div>
+            <!-- // Group END -->
+            <%#= v.hidden_field : %>
+            <%= v.hidden_field :provider, :class => "form-control span8" %>
+            <%#= v.hidden_field :token, :class => "form-control span8" %>
+            <%= v.hidden_field :uid, :class => "form-control span8" %>
+
+        <% end %>
+
+        <!-- // Widget heading END -->
+
+        <div class="form-group">
+          <%= f.label :gender,'Who are you?', :class => "col-md-4 control-label" %>
+          <!--<label class="col-md-4 control-label" for="email">Who are you?</label>-->
+
+          <div class="widget-body innerAll inner-2x">
+            <div class="radio">
+              <label class="radio-custom">
+                <%= f.radio_button :gender, 'male', :checked => true, :class => "col-md-4" %>
+                <!--<input class="col-md-4" type="radio" name="radio">-->
+                <i class="fa fa-circle-o"></i> Male
+              </label>
+            </div>
+            <div class="radio">
+              <label class="radio-custom">
+                <%= f.radio_button :gender, 'female', :class => "col-md-4" %>
+                <!--<input class="col-md-4" type="radio" name="radio" checked="checked">-->
+                <i class="fa fa-circle-o checked"></i> Female
+              </label>
+            </div>
+            <div class="radio">
+              <label class="radio-custom">
+                <%= f.radio_button :gender, 'group', :class => "col-md-4" %>
+                <!--<input class="col-md-4" type="radio" name="radio" disabled="disabled">-->
+                <i class="fa fa-circle-o"></i> Group
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- // Widget END -->
+
+      </div>
+      <!-- // Column END -->
+
+    </div>
+    <!-- // Row END -->
+
+    <!-- Row -->
+    <div class="bg-gray innerAll inner-2x">
+      <div class="row">
+
+        <!-- Column -->
+        <div class="col-md-4">
+          <h4>Policy &amp; Subscription</h4>
+
+          <div class="checkbox">
+            <%= f.label :agree_to_privacy, :class=>"checkbox-custom" do %>
+                <i class="fa fa-fw fa-square-o"></i>
+                <%= f.check_box :agree_to_privacy, :class=>"checkbox" %>
+                Please agree to our policy
+            <% end %>
+          </div>
+          <div class="checkbox">
+            <%= f.label :subscription, :class=>"checkbox-custom" do %>
+                <i class="fa fa-fw fa-square-o"></i>
+                <%= f.check_box :subscription, :class=>"checkbox", checked:true %>
+                Receive Email Communications from Kovered360
+            <% end %>
+          </div>
+        </div>
+        <!-- // Column END -->
+
+        <!-- Column -->
+        <div class="col-md-8">
+          <div id="newsletter_topics">
+            <!--<h4>Sign in with Google +</h4>-->
+            <%#= link_to user_omniauth_authorize_path(:google_oauth2), id: "sign_in_with_facebooks", class: "btn btn-info-google", :data => {:toggle=>"modal" } do %>
+                <!--<i class="fa fa-fw fa-google-plus"></i> Sign in with Google +-->
+            <%# end %>
+            <h4>Sign in with Facebook</h4>
+            <%#= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook, :type=>'fan') %>
+            <%= link_to user_omniauth_authorize_path(:facebook), id: "sign_in_with_facebooks", class: "btn btn-info", :data => {:toggle=>"modal" } do %>
+                <i class="fa fa-fw fa-facebook"></i> Sign in with Facebook
+            <% end %>
+          </div>
+        </div>
+        <!-- // Column END -->
+
+      </div>
+      <!-- // Row END -->
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- Form Actions -->
+    <div class="form-Actions">
+      <!-- // Widget heading END -->
+
+      <div class="widget-body center">
+        <%= f.submit "Register",:class=>"btn btn-success", :disabled => true , :data => {:layout=>"top", :type=>"success"} %>
+        <%= link_to root_path, class: "btn btn-default" do %>
+            <i class="fa fa-times"></i> Cancel
+        <% end %>
+      </div>
+    </div>
+
+    </div>
+    <!-- // Form Actions END -->
+
+    </div>
+    </div>
+    <!-- // Widget END -->
+    </div>
+    <!-- // Tab content END -->
+    </div>
+    </div>
+    <!-- // Tabs END -->
+
+<% end %>
+
+<% content_for :head do %>
+    <script type=" text/javascript" charset="utf-8">
+        $(function() {
+            if ($('#artist_agree_to_privacy').is(':checked')){
+                $('input.btn-success').attr('disabled',false)
+            }
+            $('#artist_agree_to_privacy').change(function() {
+                $('input.btn-success').attr('disabled', !this.checked);
+            });
+            $('#artist_user_attributes_email').on('focusout', function () {
+                $.ajax({
+                    url: '<%= is_email_exist_artists_path %>',
+                    method: 'get',
+                    data: {
+                        'artist[user_attributes][email]': $(this).val()}
+                });
+            });
+        });
+    </script>
+<% end %>

@@ -1,0 +1,22 @@
+<% content_for :title, "User LogIn" %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="innerLR">
+      <%= f.text_field :login, autofocus: true, :class => "form-control text-center bg-gray", :placeholder=>"Username or Email" %>
+      <%#= f.email_field :email, autofocus: true, :class => "form-control text-center bg-gray", :placeholder=>"Username" %>
+      <%= f.password_field :password, autocomplete: "off", :class => "form-control text-center bg-gray", :placeholder=>"Enter Password" %>
+    </div>
+    <p></p>
+    <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+    <% end -%>
+    <div class="innerT">
+      <%= button_tag(type: "submit", class: "btn btn-success navbar-btn") do %>
+          Login <i class="fa fa-fw fa-unlock-alt"></i>
+    <% end %>
+    </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

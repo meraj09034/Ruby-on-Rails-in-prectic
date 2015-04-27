@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7 paceCounter paceSocial"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8 paceCounter paceSocial"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 paceCounter paceSocial"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie paceCounter paceSocial"> <![endif]-->
+<!--[if !IE]><!--><html class="paceCounter paceSocial"><!-- <![endif]-->
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Kovered360" %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <!-- Meta -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= csrf_meta_tags %>
+  <!--
+  **********************************************************
+  In development, use the LESS files and the less.js compiler
+  instead of the minified CSS loaded by default.
+  **********************************************************
+  <link rel="stylesheet/less" href="../assets/less/admin/module.admin.stylesheet-complete.layout_fixed.true.less" />
+  -->
+
+  <!--[if lt IE 9]><link rel="stylesheet" href="/assets/bootstrap.min.css" /><![endif]-->
+
+  <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <script>if (/*@cc_on!@*/false && document.documentMode === 10) { document.documentElement.className+=' ie ie10'; }</script>
+
+</head>
+<body class="">
+
+<!-- Main Container Fluid -->
+<div class="container-fluid ">
+
+
+  <!-- Content START -->
+  <div id="content">
+    <!-- <div class="layout-app col-fs">  -->
+    <div class="container"><div class="layout-app col-fs">
+      <div class="row row-app">
+        <div class="col-md-12">
+          <div class="col-separator col-separator-first box col-unscrollable col-fs">
+            <div class="col-table">
+              <div class="col-table-row">
+                <div class="col-app col-unscrollable tab-content">
+                  <div id="lock-1-1">
+                    <%= render 'layouts/flash_messages' %>
+                    <h3 class="text-white innerB text-center">Account Access</h3>
+                    <div class="lock-container">
+                      <div class="innerAll text-center">
+                        <%= link_to root_path, :class=>"img-circle" do %>
+                            <%= image_tag "logo/logo.jpg", size: "46x45", alt: "Go Hom" %>
+                        <% end %>
+                        <!--<a href="index.html"><img src="/assets/logo/logo.jpg" class="img-circle"/></a>-->
+                        <br><br>
+
+                          <%=yield %>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

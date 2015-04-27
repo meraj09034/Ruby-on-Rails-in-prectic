@@ -1,0 +1,82 @@
+<%= render :partial => 'carousel_slide' rescue '<div class="row"></div>'.html_safe %>
+<h1 class="margin-none">Covered Songs</h1>
+<br>
+<div class="row">       <!-- Row -->
+  <div class="col-md-9">  <!-- Col -->
+    <div class="row">       <!-- Start Featured -->
+      <% (8..12).each do |p| %>
+          <div class="col-md-3">
+            <div class="widget ">
+              <% if p.odd? %>
+                  <!--<div class="ribbon-wrapper">-->
+                  <!--<div class="ribbon primary">New</div>-->
+                  <!--</div>-->
+                  <a href="http://vimeo.com/59015141" class="thumbnail zoom border-none innerAll half">
+                    <%= image_tag asset_url("gallery/#{p}.jpg"), size: "200x100", alt: "photo", class: "img-responsive" %>
+                  </a>
+                  <div class="text-center innerAll">
+                    <a href="#" class="strong display-block">Album Name</a>
+                    <span class="text-muted-dark"><i class="fa fa-fw fa-calendar"></i> Released:</span> 21 January 2014
+                  </div>
+              <% else %>
+
+                  <div class="thumbnail zoom border-none">
+                    <a href="http://vimeo.com/59015141" data-toggle="prettyPhoto" class="thumb">
+                      <%= image_tag asset_url("gallery/#{p}.jpg"), size: "200x100", alt: "photo", class: "img-responsive" %>
+                    </a>
+                    <div class="caption text-center">
+                      <a href="#" class="strong display-block">Cover Song Title</a>
+                      <span class="text-muted-dark"><i class="fa fa-fw fa-calendar"></i> Released:</span> 21 January
+                      2014
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+      <div class="clearfix"></div>
+    </div>
+    <br>
+    <h1 class="margin-none">Original Songs</h1>
+    <br>
+    <!-- Start Original Songs -->
+    <div class="row">
+      <% (1..5).each do |p| %>
+          <div class="col-md-3">
+            <div class="widget ">
+              <% if p.odd? %>
+                  <!--<div class="ribbon-wrapper">-->
+                  <!--<div class="ribbon primary">New</div>-->
+                  <!--</div>-->
+
+                  <div class="thumbnail zoom border-none">
+                    <a href="http://vimeo.com/59015141" data-toggle="prettyPhoto" class="thumb">
+                      <%= image_tag asset_url("gallery/#{p}.jpg"), size: "200x110", alt: "photo", class: "img-responsive" %>
+                    </a>
+                    <div class="caption text-center">
+                      <a href="#" class="strong display-block">Cover Song Title</a>
+                      <span class="text-muted-dark"><i class="fa fa-fw fa-calendar"></i> Released:</span> 21 January
+                      2014
+                    </div>
+                  </div>
+
+              <% else %>
+                  <a href="#" class="thumbnail zoom border-none innerAll half">
+                    <%= image_tag asset_url("gallery/#{p}.jpg"), size: "200x110", alt: "photo", class: "img-responsive" %>
+                  </a>
+                  <div class="text-center innerAll">
+                    <a href="#" class="strong display-block">Album Name</a>
+                    <span class="text-muted-dark"><i class="fa fa-fw fa-calendar"></i> Released:</span> 21 January 2014
+                  </div>
+
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+      <div class="clearfix"></div>
+    </div>
+    <!-- END Original Songs -->
+  </div>
+  <!-- Suggested Artists Section -->
+  <%= render :partial => 'sidebar_nav' rescue '<div class="col-md-4 col-lg-3"></div>'.html_safe %>
+</div>

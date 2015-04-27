@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require 'bootstrap.min.css'
+ *= require 'font-awesome.min.css'
+ *= require 'glyphicons_filetypes.css'
+ *= require 'glyphicons_regular.css'
+ *= require 'glyphicons_social.css'
+ *= require 'picto.css'
+ *= require 'jquery-ui.min.css'
+ *= require 'animate.min.css'
+ *= require 'fullcalendar.css'
+ *= require 'jquery.easy-pie-chart.css'
+ *= require 'prettify.css'
+ *= require 'bootstrap-wysihtml5-0.0.2.css'
+ *= require 'bootstrap-datepicker.css'
+ *= require 'bootstrap-select.css'
+ *= require 'bootstrap-switch.css'
+ *= require 'bootstrap-timepicker.css'
+ *= require 'farbtastic.css'
+ *= require 'fileupload.css'
+ *= require 'multi-select.css'
+ *= require 'select2.css'
+ *= require 'dropzone.css'
+ *= require 'jquery.plupload.queue.css'
+ *= require 'elements.css'
+ *= require 'jquery-jvectormap-1.1.1.css'
+ *= require 'jquery-jvectormap-1.2.2.css'
+ *= require 'blueimp-gallery.min.css'
+ *= require 'jquery.Jcrop.css'
+ *= require 'owl.carousel.css'
+ *= require 'owl.theme.css'
+ *= require 'prettyPhoto.css'
+ *= require 'jquery.gritter.css'
+ *= require 'jquery.notyfy.css'
+ *= require 'notyfy.theme.default.css'
+ *= require 'pageguide.css'
+ *= require 'ColReorder.css'
+ *= require 'ColVis.css'
+ *= require 'TableTools.css'
+ *= require 'footable.core.min.css'
+ *= require iThing
+ *= require chosen
+ *= require module.admin.stylesheet-complete.layout_fixed.true.min
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require_self
+ */
+
+
+
+/* add required field asterisk */
+label.required:after {
+    content: " *";
+    color: red;
+}
+.has-error .chosen-container-single .chosen-single {
+    border-color: #a94442;
+}
+
+.btn-info-google {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: transparent;
+}
+
+.btn-info-google:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: #E16455;
+    border-color: transparent;
+}

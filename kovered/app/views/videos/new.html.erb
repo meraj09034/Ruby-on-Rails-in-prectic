@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>New video</h1>
+
+  <%= form_for @video do |f| %>
+      <%= error_messages! @video %>
+
+      <!--<div class="form-group">-->
+        <%#= f.label :link %>
+        <%#= f.text_field :link, class: 'form-control' %>
+        <!--<span class="help-block">A link to the video on YouTube.</span>-->
+      <!--</div>-->
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :file %>
+        <%= f.file_field :video, class: 'form-control', required: true %>
+      </div>
+      <%=f.hidden_field :artist_id,:value => current_user.artist.id %>
+
+      <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

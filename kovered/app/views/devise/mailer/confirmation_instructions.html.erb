@@ -1,0 +1,127 @@
+<div>
+  <table width="100%" cellpadding="10" cellspacing="0" style="margin:0;padding:0 0 30px 0;background-color:#f4f5f7">
+    <tbody>
+    <tr>
+      <td>
+        <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+          <tbody>
+          <tr>
+            <td style="color:#9ab;font:normal 11px helvetica,sans-serif;text-align:center;padding:10px 0 20px 0">To
+              ensure delivery, add
+              <strong><a href="mailto:kovered360@hotmail.com" target="_blank">kovered360@hotmail.com</a></strong> to your
+              address book.
+            </td>
+          </tr>
+          <tr>
+            <td style="background: url('http://dc383.4shared.com/img/y3qvZnunba/14b070ee680/image_header') repeat;">
+              <%#= image_tag('image_header.png') %>
+              <img src="http://dc383.4shared.com/img/y3qvZnunba/14b070ee680/image_header" border="0" alt="" class="CToWUd">
+            </td>
+          </tr>
+          <tr>
+            <td style="border:1px dotted #d6d7d8;border-top:none;border-bottom:3px solid #d6d7d8">
+
+              <table width="100%" cellpadding="30" cellspacing="0" border="0" align="center">
+                <tbody>
+                <tr>
+                  <td style="background-color:#ffffff">
+
+                    <p style="text-align:center;margin:5px 0 25px 0;padding:0">
+                      <!--<a href="http://www.4shared.com/photo/IcGeycGwba/logo.html" target=_blank><img src="http://dc383.4shared.com/img/IcGeycGwba/14b0707a320/logo" border="0"></a>-->
+                      <%= link_to 'http://111.221.7.68:3000', target: "_blank" do%>
+                          <img src="http://dc383.4shared.com/img/IcGeycGwba/14b0707a320/logo" border="0" alt="kovered360" width="46" class="CToWUd">
+                          <%#= image_tag "logo/logo.jpg", size: "46x45", alt: "Kovered360", :class=>"CToWUd" %>
+                          <%#= image_tag email_image_fans_path, size: "46x45", alt: "Kovered360", :class=>"CToWUd" %>
+                      <% end %>
+                      <!--<a href="https://kovered360.com?utm_source=email&amp;utm_medium=kovered360-intro-welcome-20130100&amp;utm_campaign=1091&amp;email_id=d2VsY29tZXxiNGQ3YWI0MDc5Yzg3ZDFjYjg2ODJlMmNhMjFlYzJhYzIzNnwzNjM0NDYxMHwxNDIxMTMzNDY0fDEwOTE%3D" style="color:#28c;text-decoration:none" target="_blank">-->
+                      <!--<img src="https://drive.google.com/open?id=0B1qfvfs17UYKcjd4Q1hycDBmWEU&authuser=0" border="0" alt="kovered360" width="46" class="CToWUd">-->
+                      <!--</a>-->
+                    </p>
+
+                    <p style="color:#456;font-family:helvetica,arial,sans-serif;font-size:24px;line-height:1.2;margin:15px 0;padding:0">
+                      <strong>Hello <%= @email %>!</strong></p>
+
+                    <p style="color:#456;font-family:helvetica,arial,sans-serif;font-size:14px;line-height:1.5;margin:15px 0;padding:0">
+                      <strong>Welcome to Kovered360!</strong> You have just joined the best site in the universe to upload
+                      and share the videos you create. We’re glad you’re here! Before you start uploading videos and
+                      exploring Kovered360’s amazingness, we just need to confirm that you are a friendly human and not an
+                      evil robot:</p>
+
+                    <table align="center" width="360" cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                      <tr>
+                        <td>
+                          <p style="width:300px;background:#2786c2;font-family:helvetica,arial,sans-serif;font-size:18px;line-height:18px;text-align:center;margin:10px auto 20px auto;padding:14px 10px;border-radius:6px">
+                            <%= link_to '<strong>Complete Your Registration</strong>'.html_safe, confirmation_url(@resource, confirmation_token: @token), {style: "color:#fff;text-decoration:none", target: "_blank"}  %>
+                            <!--<a href="https://kovered360.com/user/verify?code=b3ebc898ae99c18f62ead3a6495bb6f6&amp;utm_source=email&amp;utm_medium=kovered360-intro-welcome-20130100&amp;utm_campaign=1091&amp;email_id=d2VsY29tZXxiNGQ3YWI0MDc5Yzg3ZDFjYjg2ODJlMmNhMjFlYzJhYzIzNnwzNjM0NDYxMHwxNDIxMTMzNDY0fDEwOTE%3D" style="color:#fff;text-decoration:none" target="_blank">-->
+                              <!--<strong>Complete Your Registration</strong>-->
+                            <!--</a>-->
+                          </p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+
+                    <p style="color:#456;font-family:helvetica,arial,sans-serif;font-size:14px;line-height:1.5;margin:15px 0;padding:0">
+                      Once your registration is complete, you can start using Kovered360</p>
+
+                    <p style="color:#456;font-family:helvetica,arial,sans-serif;font-size:14px;line-height:1.5;margin:15px 0;padding:0">Thanks
+                      again for joining. See you on the site!</p>
+
+                    <p style="color:#456;font-family:helvetica,arial,sans-serif;font-size:14px;line-height:1.5;font-style:italic;margin:15px 0 0 0;padding:0">LOVE,<br>Kovered360
+                    </p>
+
+                    <table style="width:100%;font:normal 11px helvetica,sans-serif;margin:30px 0 0 0;padding:25px 0 0 0;border-top:1px dotted #e1e2e3">
+                      <tbody>
+                      <tr>
+                        <td style="width:100%;padding:0 10px 0 0">
+                          <p style="color:#9ab">You are receiving this email because you registered at Kovered360 (Address) and agreed to receive email from us regarding new features,
+                            events and special offers about Kovered360 services.</p>
+                        </td>
+                        <td>
+                          <%= link_to 'http://111.221.7.68:3000', target: "_blank" do %>
+                              <img src="http://dc383.4shared.com/img/IcGeycGwba/14b0707a320/logo" alt="kovered360" width="46" height="45" border="0" style="border:none" class="CToWUd"></a>
+                              <%#= image_tag "logo/logo.jpg", size: "46x45", alt: "Kovered360", :class=>"CToWUd" %>
+                          <% end %>
+                          <!--<a href="https://kovered360.com" style="color:#28c;text-decoration:none" target="_blank">-->
+                          <!--<img src="https://ci3.googleusercontent.com/proxy/D-2lGi9TNNWTQu-a5eknMTnizGW6i567tMRbeHi3STXr70HkwEqxROK-jQbQoZVLiSXcj3HxJGWVKFazig1Q3sHd-Z1j7TAf66KLFFsM1cqK=s0-d-e1-ft#http://f.kovered360cdn.com//images_v6/email/kovered360_logo_email.gif" alt="kovered360" width="75" height="21" border="0" style="border:none" class="CToWUd"></a>-->
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+
+                    <div>
+
+                      <div>
+
+                        <div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style="color:#9ab;font:normal 11px helvetica,sans-serif;text-align:center;padding:20px 0">
+              TM + © Kovered360, LLC<br>
+              Address<br>
+              <a href="http://111.221.7.68:3000" style="color:#9ab" target="_blank">Terms</a> |
+              <a href="http://111.221.7.68:3000" style="color:#9ab" target="_blank">Privacy Policy</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <img src="https://ci6.googleusercontent.com/proxy/3itFfhLVcyRI4DosA125Pxmi8jBot3e-WlymLT5rUdZdLmdGuDsjmqBuBnfi8vzjCmHJXFF-NGSZ4DReqp3qyljJm5zwwkwsxa3kKPr5-4oclSKDLkZmWiqaeH-AB7Ws2pgiFD6wDJJaTMSCcYMOr-3dDSSx4vnfBpsrKE95VWYZ1oiodGNwjZZaf28UhnGTuHNP02zSH_DAeQ=s0-d-e1-ft#http://vimeo.com/email/track_pixel?r=d2VsY29tZXxiNGQ3YWI0MDc5Yzg3ZDFjYjg2ODJlMmNhMjFlYzJhYzIzNnwzNjM0NDYxMHwxNDIxMTMzNDY0fDEwOTE%3D" alt="" class="CToWUd">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

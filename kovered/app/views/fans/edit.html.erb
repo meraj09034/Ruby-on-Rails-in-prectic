@@ -1,0 +1,146 @@
+<% content_for :title, "Edit Fan Profile" %>
+<%= render 'form' %>
+<%= form_for(@fan, :html => {:class => "form-horizontal margin-none"}) do |f| %>
+    <%= error_messages! @fan %>
+    <%#= render 'layouts/error_messages', :object => @fan %>
+
+    <!-- Widget -->
+    <div class="widget">
+
+    <!-- Widget heading -->
+    <div class="widget-head">
+      <h4 class="heading">Edit Fan Profile</h4>
+    </div>
+    <!-- // Widget heading END -->
+
+    <!-- Tabs -->
+    <div class="relativeWrap">
+    <div class="box-generic">
+
+    <!-- Tabs Heading -->
+    <div class="tabsbar tabsbar-2">
+      <ul class="row row-merge">
+        <li class="col-md-12 glyphicons heart active">
+          <%= link_to fan_path do %>
+              <i></i> <span>Music Lover</span>
+          <% end %>
+
+          <!--<a href="" data-toggle="tab"><i></i> <span>Music Lover</span></a>-->
+        </li>
+      </ul>
+    </div>
+    <!-- // Tabs Heading END -->
+
+    <div class="tab-content">
+
+    <!-- Tab content -->
+    <div class="tab-pane active" id="tab1-4">
+    <div class="widget-body innerAll inner-2x">
+
+    <!-- Row -->
+    <div class="row innerLR">
+
+      <!-- Column -->
+      <div class="col-md-5">
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :first_name, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :first_name, autofocus: true, :class => "form-control" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :last_name, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :last_name, :class => "form-control" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :genre_ids,'Favorite genres', :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.select :genre_ids, grouped_options_for_select(music_genre, :selected => @fan.genre_ids ), {:prompt=>"Select Other Genres"}, { :data => {:placeholder=>"Select Genres..."}, :class=> "dropdown-toggle form-control span8 chosen-select", :multiple => true} %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :date_of_birth, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :date_of_birth, :class=>'datetime form-control span8' %>
+            <%#= f.date_select :date_of_birth, :class => "form-control", :id=>"inputmask-date-2", :placeholder=>"dd/mm/yyyy" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+      </div>
+      <!-- // Column END -->
+
+      <!-- Column -->
+      <div class="col-md-5">
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :city, :class => "col-md-4 control-label" %>
+          <div class="col-md-8">
+            <%= f.text_field :city, :class => "form-control span8" %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+        <!-- Group -->
+        <div class="form-group">
+          <%= f.label :country_id, :class => "col-md-4 control-label " %>
+
+
+          <div class="col-md-8">
+            <%= f.select :country_id, country,  {:prompt => t('select_nationality')}, {:class => "dropdown-toggle form-control span8 chosen-select"} %>
+          </div>
+        </div>
+        <!-- // Group END -->
+
+      </div>
+      <!-- // Column END -->
+
+    </div>
+    <!-- // Row END -->
+
+    <!-- Row -->
+    <div class="bg-gray innerAll"></div>
+
+    <div class="separator"></div>
+
+    <!-- Form Actions -->
+    <div class="form-Actions">
+      <!-- // Widget heading END -->
+
+      <div class="widget-body center">
+        <%= f.submit "Update",:class=>"btn btn-success", :data => {:layout=>"top", :type=>"success"} %>
+        <!--<span class="btn btn-success" data-layout="top" data-type="success" data-toggle="notyfy">Register</span>-->
+        <%= link_to root_path, class: "btn btn-default" do %>
+            <i class="fa fa-times"></i> Cancel
+        <% end %>
+        <!--<button type="button" class="btn btn-default"><i class="fa fa-times"></i> Cancel</button>-->
+      </div>
+    </div>
+
+    </div>
+    <!-- // Form Actions END -->
+
+    </div>
+    </div>
+    <!-- // Widget END -->
+    </div>
+    <!-- // Tab content END -->
+    </div>
+    </div>
+    <!-- // Tabs END -->
+
+<% end %>

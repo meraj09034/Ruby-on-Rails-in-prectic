@@ -1,0 +1,130 @@
+
+
+
+<p id="success"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @fan.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @fan.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @fan.gender %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @fan.date_of_birth %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @fan.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @fan.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @fan.country_id %>
+</p>
+
+<p>
+  <strong>Fav genre:</strong>
+  <%= @fan.fav_genre %>
+</p>
+
+
+
+<script type="text/javascript">
+    $('document').ready(function (){
+        $('#success').notify("sfrdsfsdafa");
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @artist.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @artist.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @artist.gender %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @artist.date_of_birth %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @artist.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @artist.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @artist.country_id %>
+</p>
+
+<p>
+  <strong>Band name:</strong>
+  <%= @artist.band_name %>
+</p>
+
+<p>
+  <strong>Dialog:</strong>
+  <%= @artist.dialog %>
+</p>
+
+<p>
+  <strong>Agree to privacy:</strong>
+  <%= @artist.agree_to_privacy %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @artist.subscription %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @artist.user %>
+</p>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
+

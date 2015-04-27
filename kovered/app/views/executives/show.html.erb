@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @executive.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @executive.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @executive.gender %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @executive.date_of_birth %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @executive.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @executive.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @executive.country_id %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @executive.website %>
+</p>
+
+<p>
+  <strong>Agree to privacy:</strong>
+  <%= @executive.agree_to_privacy %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @executive.subscription %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @executive.user %>
+</p>
+
+<%= link_to 'Edit', edit_executive_path(@executive) %> |
+<%= link_to 'Back', executives_path %>

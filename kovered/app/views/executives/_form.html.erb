@@ -1,0 +1,61 @@
+<%= form_for(@executive) do |f| %>
+  <% if @executive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@executive.errors.count, "error") %> prohibited this executive from being saved:</h2>
+
+      <ul>
+      <% @executive.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country_id %><br>
+    <%= f.number_field :country_id %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :agree_to_privacy %><br>
+    <%= f.check_box :agree_to_privacy %>
+  </div>
+  <div class="field">
+    <%= f.label :subscription %><br>
+    <%= f.check_box :subscription %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

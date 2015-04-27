@@ -1,0 +1,202 @@
+<% content_for :title, "Edit Artist Profile" %>
+<%= render 'form' %>
+<%= form_for(@artist, :html => {:class => "form-horizontal margin-none"}) do |f| %>
+    <%= error_messages! @artist %>
+    <%#= render 'layouts/error_messages', :object => @fan %>
+
+    <!-- Widget -->
+    <div class="widget">
+
+      <!-- Widget heading -->
+      <div class="widget-head">
+        <h4 class="heading">Edit Artist Profile</h4>
+      </div>
+      <!-- // Widget heading END -->
+
+      <!-- Tabs -->
+      <div class="relativeWrap">
+        <div class="box-generic">
+
+          <!-- Tabs Heading -->
+          <div class="tabsbar tabsbar-2">
+            <ul class="row row-merge">
+              <li class="col-md-12 glyphicons star active">
+                <%= link_to artist_path do %>
+                    <i></i> <span>Artist</span>
+                <% end %>
+
+                <!--<a href="" data-toggle="tab"><i></i> <span>Music Lover</span></a>-->
+              </li>
+            </ul>
+          </div>
+          <!-- // Tabs Heading END -->
+
+          <div class="tab-content">
+
+            <!-- Tab content -->
+            <div class="tab-pane active" id="tab1-4">
+              <div class="widget-body innerAll inner-2x">
+
+                <!-- Row -->
+                <div class="row innerLR">
+
+                  <!-- Column -->
+                  <div class="col-md-5">
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :first_name, :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%= f.text_field :first_name, autofocus: true, :class => "form-control" %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :last_name, :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%= f.text_field :last_name, :class => "form-control" %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :band_name, :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%#= raise @artist.band_name.inspect%>
+                        <%#= f.grouped_collection_select(:fav_genre, MusicGenre.all, :genres, :name, :id, :name, {:prompt=>"Select Favorite Genre"}, {:class=> "dropdown-toggle form-control span8"}) %>
+                        <%= f.select :band_name, grouped_options_for_select(music_genre,:selected => @artist.band_name), {:prompt=>"Select Favorite Genre"}, {:class=> "dropdown-toggle form-control span8 chosen-select"} %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :genre_id,'Genre', :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%#= f.grouped_collection_select(:fav_genre, MusicGenre.all, :genres, :name, :id, :name, {:prompt=>"Select Favorite Genre"}, {:class=> "dropdown-toggle form-control span8"}) %>
+                        <%= f.select :genre_id, grouped_options_for_select(music_genre, :selected =>@artist.genre ), {:prompt=>"Select Genre"}, {:class=> "dropdown-toggle form-control span8 chosen-select"} %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+
+                    <!-- Group -->
+                    <!--<div class="form-group">
+                      <%#= f.label :genre_ids,'Others', :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%#= f.select :genre_ids, grouped_options_for_select(music_genre, :selected => @fan.genre_ids ), {:prompt=>"Select Other Genres"}, { :data => {:placeholder=>"Select Genres..."}, :class=> "dropdown-toggle form-control span8 chosen-select", :multiple => true} %>
+                      </div>
+                    </div>-->
+                    <!-- // Group END -->
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :date_of_birth, :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%= f.text_field :date_of_birth, :class=>'datetime form-control span8' %>
+                        <%#= f.date_select :date_of_birth, :class => "form-control", :id=>"inputmask-date-2", :placeholder=>"dd/mm/yyyy" %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+                  </div>
+                  <!-- // Column END -->
+
+                  <!-- Column -->
+                  <div class="col-md-5">
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :city, :class => "col-md-4 control-label" %>
+                      <div class="col-md-8">
+                        <%= f.text_field :city, :class => "form-control span8" %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+                    <!-- Group -->
+                    <div class="form-group">
+                      <%= f.label :country_id, :class => "col-md-4 control-label " %>
+
+
+                      <div class="col-md-8">
+                        <%= f.select :country_id, country,  {:prompt => t('select_nationality')}, {:class => "dropdown-toggle form-control span8 chosen-select"} %>
+                      </div>
+                    </div>
+                    <!-- // Group END -->
+
+                    <!-- // Widget -->
+
+                    <div class="form-group">
+                      <%= f.label :gender,'Who are you?', :class => "col-md-4 control-label" %>
+                      <!--<label class="col-md-4 control-label" for="email">Who are you?</label>-->
+
+                      <div class="widget-body innerAll inner-2x">
+                        <div class="radio">
+                          <label class="radio-custom">
+                            <%= f.radio_button :gender, 'male', :checked => true, :class => "col-md-4" %>
+                            <!--<input class="col-md-4" type="radio" name="radio">-->
+                            <i class="fa fa-circle-o"></i> Male
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="radio-custom">
+                            <%= f.radio_button :gender, 'female', :class => "col-md-4" %>
+                            <!--<input class="col-md-4" type="radio" name="radio" checked="checked">-->
+                            <i class="fa fa-circle-o checked"></i> Female
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="radio-custom">
+                            <%= f.radio_button :gender, 'group', :class => "col-md-4" %>
+                            <!--<input class="col-md-4" type="radio" name="radio" disabled="disabled">-->
+                            <i class="fa fa-circle-o"></i> Group
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // Widget END -->
+
+                  </div>
+                  <!-- // Column END -->
+
+                </div>
+                <!-- // Row END -->
+
+                <!-- Row -->
+                <div class="bg-gray innerAll"></div>
+
+                <div class="separator"></div>
+
+                <!-- Form Actions -->
+                <div class="form-Actions">
+                  <!-- // Widget heading END -->
+
+                  <div class="widget-body center">
+                    <%= f.submit "Update",:class=>"btn btn-success", :data => {:layout=>"top", :type=>"success"} %>
+                    <!--<span class="btn btn-success" data-layout="top" data-type="success" data-toggle="notyfy">Register</span>-->
+                    <%= link_to root_path, class: "btn btn-default" do %>
+                        <i class="fa fa-times"></i> Cancel
+                    <% end %>
+                    <!--<button type="button" class="btn btn-default"><i class="fa fa-times"></i> Cancel</button>-->
+                  </div>
+                </div>
+
+              </div>
+              <!-- // Form Actions END -->
+
+            </div>
+          </div>
+          <!-- // Widget END -->
+        </div>
+        <!-- // Tab content END -->
+      </div>
+    </div>
+    <!-- // Tabs END -->
+
+<% end %>

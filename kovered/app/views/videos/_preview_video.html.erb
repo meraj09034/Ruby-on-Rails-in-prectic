@@ -1,0 +1,10 @@
+<div id="myElement">Loading the player...</div>
+<%#= raise request.base_url + @video.video_url.to_s %>
+<script type="text/javascript">
+    jwplayer("myElement").setup({
+        file: '<%= request.base_url + @video.video_url.to_s %>',
+        image: '<%=@video.preview_url%>',
+        width: 640,
+        height: 360
+    });
+</script>

@@ -14,6 +14,7 @@
     = f.text_field :price
   .field
     = f.label :image
-    = f.file_field :image
+    = f.file_field :image, multiple: true
+
   .actions
     = f.submit 'Save'
